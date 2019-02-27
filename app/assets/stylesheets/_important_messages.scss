@@ -1,0 +1,45 @@
+.important_message_wrap {
+  list-style: none;
+  text-align: left;
+  padding: 10px 17px 17px 17px;
+  font-size: 1.2em;
+  width: 100%;
+  height: 37.0vh;
+  //overflow: auto;
+
+  .send-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 14px;
+    padding: 5px 45px;
+    border-color: #f26226;
+  }
+
+  .resize_title {
+    background-color: #FFFFFF;
+    border: none;
+    border-bottom: 2px solid #F0F0F0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 10px;
+    font-size: .8em;
+  }
+  .resize_message_box_IM{
+    height: 18vh;
+    width: 100%;
+    background-color: #F0F0F0;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    resize: none;
+    outline: none;
+    padding: 1px 10px;
+    font-size: .8em;
+  }
+  label.compose-title{
+    font-weight: 300;
+  }
+}
+.no-message{
+  padding: 10px;
+}

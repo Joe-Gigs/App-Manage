@@ -1,0 +1,6 @@
+results = $('.app-info-pane-view .content');
+if (results.css('display') === 'block') {
+  results.toggle();
+}
+results.html('<%= j render 'partials/view_delete' %>').show();
+$('.app-info-pane-view .title').text('DELETE YOUR APPLICATION');

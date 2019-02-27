@@ -1,0 +1,24 @@
+.wrapper_new_push_notifications {
+  padding: 15px 15px 18px 11px;
+}
+.resize_message_box {
+  height: 26vh;
+  width: 100%;
+  background-color: #F0F0F0;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+  padding: 1px 10px;
+  font-size: .8em;
+}
+.push-send-btn {
+  position: absolute;
+  bottom: 1px;
+  right: 14px;
+  padding: 5px 40px;
+  border-color: #f26226;
+}
+.push-title{
+  font-weight: 300;
+}

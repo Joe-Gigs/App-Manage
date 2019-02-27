@@ -1,0 +1,157 @@
+@import "bootstrap";
+@import 'colors';
+@import "login_styles";
+@import "button_holder";
+@import "console";
+@import "super_admin_console";
+@import "view_push_notifications";
+@import "new_push_notification";
+@import "important_messages";
+@import "view_important_messages";
+@import "new_user_stats";
+@import "configure_users";
+@import "config_email";
+@import "config_push";
+@import "app_info";
+@import "view_app_key";
+@import "delete";
+@import "no_messages";
+@import "user_stats";
+@import "view_email_notification_index";
+@import "admin_page_style";
+@import "push_notifications";
+
+body, html {
+  font-family: "Open Sans", sans-serif;
+  background-color: #F0F0F0;
+  .container-fluid {
+    width: 80vw;
+  }
+  .black, .black:hover, .black:visited{
+    color: black !important;
+  }
+}
+
+#dropdownMenu1, .lock-btn,
+#app-key-toggle, #api-key-toggle{
+  cursor: pointer;
+}
+a, a:visited, a:hover {
+  color: $ma-orange;
+}
+
+#hello {
+  color: $ma-orange;
+}
+
+.navbar .container-fluid {
+  width: 80vw;
+}
+
+.dropdown-holder {
+  position: relative;
+}
+
+nav #nav-drop {
+  color: $ma-orange;
+  font-size: 1.2em;
+  display: table;
+  height: 12vh;
+  position: absolute;
+  right: 0;
+  .dropdown-toggle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .dropdown-list {
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    background-color: rgba($ma-orange, 1);
+    top: 65%;
+    z-index: 999999;
+    a {
+      font-weight: 500;
+      color: white;
+    }
+    a:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.btn-holder {
+  .dropdown-menu {
+    padding: 15px 10px;
+    min-width: 200px;
+    left: -119px
+  }
+}
+
+.notice {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  left: 0;
+}
+
+.btn-holder {
+  position: relative;
+  top: 5px;
+  z-index: 9999;
+  font-size: 1em;
+}
+
+.app_count {
+  color: #f26226;
+  float: right;
+}
+
+.app_name {
+  color: #f26226;
+  float: right;
+  font-weight: bold;
+}
+
+a {
+  color: #f26226;
+
+}
+.btn-sm {
+  border-radius: 5px;
+}
+
+.managed-users-btn-box {
+  display: table;
+  float: right;
+  right: 95px;
+  position: relative;
+  min-height: 12vh;
+  .hold {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .manage-users-btn {
+    padding: 5px 15px;
+    color: white;
+    background-color: #f26226;
+    border: none;
+  }
+  .manage-users-btn:hover {
+    background-color: rgba(242, 98, 38, 0.50);
+  }
+  .manage-users-btn:active, .manage-users-btn:focus,
+  .manage-users-btn:visited {
+    color: white;
+  }
+}
+#sign_up_form, #forgot-password-form{
+  .log-in-btn{
+    background-color: $ma-orange;
+    color: white;
+  }
+  .sign-up-btn{
+    background-color: $ma-grey;
+    color: white;
+  }
+}

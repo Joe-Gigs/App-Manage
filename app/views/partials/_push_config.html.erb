@@ -1,0 +1,47 @@
+<div id="config_push">
+  <div class="form_wrap set-key-height">
+    <%= form_for :app, :url => {:action => 'update'}, remote: true do |f| %>
+
+        <div class="form-group">
+          <%= f.label 'PUSH TOKEN', 'PUSH TOKEN' %>
+          <%= f.text_field :production_key, id: 'production_key', class: 'form-control' %>
+          <span class='lock-btn' id="production_key_lock"><%= image_tag('lock_open.png') %></span>
+        </div>
+        <%= f.submit :Update, data: {disable_with: "Updating..."}, class: 'btn update-btn btn-sm btn-default' %>
+    <% end %>
+  </div>
+</div>
+<script>
+  var counter = 0;
+  $(document).ready(function () {
+    if ($('#production_key').val().length > 0) {
+      counter++;
+      $('#production_key, .update-btn').attr('disabled', '');
+      $('#production_key_lock').html("<%= j image_tag('lock.png')%>");
+    }
+    checkCount();
+    $('#debug_key_lock').on('click', function () {
+    });
+    $('#production_key_lock').on('click', function () {
+      if ($('#production_key').attr('disabled')) {
+        counter--;
+        checkCount();
+        $('#production_key').removeAttr('disabled');
+        $(this).html("<%= j image_tag('lock_open.png') %>")
+      } else {
+        counter++;
+        checkCount();
+        $('#production_key').attr('disabled', '');
+        $(this).html("<%= j image_tag('lock.png') %>")
+      }
+    })
+  });
+  function checkCount() {
+    if (counter < 1) {
+      $('.update-btn').removeAttr('disabled');
+    }
+    else {
+      $('.update-btn').attr('disabled', '');
+    }
+  }
+</script>

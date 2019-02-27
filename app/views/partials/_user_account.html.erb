@@ -1,0 +1,23 @@
+<div class="title user-show-title">
+  <h1>Account Info</h1>
+</div>
+<div class="col-md-3 user-apps user-show">
+  <ul class="list-group">
+    <li class="list-group-item"><h5>First Name: <%= current_user.fname %></h5></li>
+    <li class="list-group-item"><h5>Last Name: <%= current_user.lname %></h5></li>
+    <li class="list-group-item"><h5>Email: <%= current_user.email %></h5></li>
+    <li class="list-group-item">
+      <h5 class="user-show-api-key">API KEY</h5>
+      <%= text_field_tag :message, nil, value: current_user.api_key, class: 'form-control', id: 'user-api-key', readonly: true%>
+      <br/>
+      <button class="users-api-key btn btn-success form-control" data-clipboard-target="#user-api-key">Copy API Key</button>
+    </li>
+  </ul>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12 stats">
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12 stats-results">
+</div>
+<script>
+    var clipboard = new Clipboard('.users-api-key');
+</script>

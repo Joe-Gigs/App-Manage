@@ -1,0 +1,6 @@
+results = $('.app-info-pane-view .content');
+if(results.css('display') === 'block') {
+    results.toggle();
+}
+results.html('<%= j render 'partials/push_config' %>').show();
+$('.app-info-pane-view .title').text('CONFIGURE PUSH NOTIFICATIONS');

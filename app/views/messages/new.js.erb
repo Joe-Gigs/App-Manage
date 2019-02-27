@@ -1,0 +1,7 @@
+results = $('.app-info-pane-view .content');
+if(results.css('display') === 'block') {
+  results.toggle();
+}
+results.html('<%= j render 'partials/new_push_notification' %>').hide().stop().slideToggle('slide');
+$('.view a').removeClass('black');
+('.compose a').addClass('black');

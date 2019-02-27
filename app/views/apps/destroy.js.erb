@@ -1,0 +1,20 @@
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+$('.app-info-pane-view .content').html('');
+$('.app-info-pane .content').html('');
+$('.app_name').html('');
+$('.new-stats-pane .content').html('');
+$('.new-sessions-pane .content').html('');
+$('.my-apps-pane .content').html("<%= j render 'partials/user_apps' %>");
+$('.dropdown-holder').after("<%= j render 'partials/flash_messages' %>");
+setTimeout(function () {
+  $('.success, .alert').slideUp();
+}, 3000);
+<% flash[:notice] = nil; flash[:alert] = nil %>
+$('.app_count').html("<%= j render 'partials/app_count' %>");
+$('.app-info-pane-view .title').text('');
+
+
+
+
+

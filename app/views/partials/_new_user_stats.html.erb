@@ -1,0 +1,23 @@
+<div id="new_user_stats_pane">
+  <ul class="new-user-stat ma-list">
+    <li class="total">Total: <span class="stat_total"><%= @app.first_runs_total %></span></li>
+    <li class="total_pop_up_show">Total number of first time app users. Note, these are NEW users since you
+      joined Managed Apps
+    </li>
+    <li>Today: <span class="stat_style"><%= @app.first_runs_today.count %></span></li>
+    <li>Yesterday:<span class="stat_style"><%= @app.first_runs_yesterday.count %></span></li>
+    <li>This Week:<span class="stat_style"><%= @app.first_runs_this_week.count %></span></li>
+    <li>Last Week:<span class="stat_style"><%= @app.first_runs_last_week.count %></span></li>
+    <li>This Month:<span class="stat_style"><%= @app.first_runs_this_month.count %></span></li>
+    <li>Last Month:<span class="stat_style"><%= @app.first_runs_last_month.count %></span></li>
+  </ul>
+</div>
+
+<script>
+  $('.total').hover(function () {
+    $('.total_pop_up_show').show()
+  }, function () {
+    $('.total_pop_up_show').hide()
+  });
+</script>
+

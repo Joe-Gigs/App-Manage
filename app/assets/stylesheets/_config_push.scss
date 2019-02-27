@@ -1,0 +1,51 @@
+#config_push {
+  .form_wrap {
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+  }
+  .move_update {
+    width: 80px;
+    margin-left: 335px;
+    background-color: #F0F0F0;
+    border: 1px solid $ma-orange;
+    border-radius: 6px;
+  }
+  #debug_key {
+    background-color: #F0F0F0;
+    border: none;
+    outline: none;
+
+  }
+  #production_key {
+    background-color: #F0F0F0;
+    outline: none;
+    border: none;
+
+  }
+  .form-group {
+    position: relative;
+    label {
+      font-size: 1em;
+      color: black;
+      font-weight: 100;
+    }
+  }
+  .lock-btn {
+    position: absolute;
+    right: 10px;
+    top: 31px;
+  }
+  .update-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 14px;
+    padding: 5px 45px;
+    border-color: #f26226;;
+  }
+  .divide_form {
+    padding-top: 30px;
+  }
+}
+
+

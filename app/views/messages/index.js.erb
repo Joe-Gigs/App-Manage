@@ -1,0 +1,7 @@
+results = $('.app-info-pane-view .content');
+if(results.css('display') === 'block') {
+  results.toggle();
+}
+results.html('<%= j render 'partials/view_push_notifications' %>').show();
+$('.app-info-pane-view .title').html('<%= j render 'partials/push_notifications_view_compose' %>');
+<!-- $('.app-info-pane-view .title').text('PUSH NOTIFICATIONS'); -->

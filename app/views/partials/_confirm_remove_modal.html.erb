@@ -1,0 +1,16 @@
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModal" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center">
+      <div class="modal-content">
+        <div class="modal-body">
+          Are you sure you want to remove <br/>
+          <%= "#{@user.fname} #{@user.lname}?" %>
+          <div class="btns">
+            <div class="btn btn-lg btn-default cancel-btn" data-dismiss="modal">Cancel</div>
+            <%= link_to 'Confirm', app_remove_user_path(@app, @user.id), class:'btn btn-danger confirm-btn btn-lg', remote: true%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

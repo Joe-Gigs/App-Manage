@@ -1,0 +1,11 @@
+.delete_wrapper {
+  padding: 15px 15px;
+  text-align: center;
+  .delete-btn, .delete-btn:active{
+    color: white;
+    background-color: $ma-orange;
+  }
+  .delete-btn:active{
+    background-color: #C6632E;
+  }
+}

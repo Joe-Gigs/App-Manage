@@ -1,0 +1,136 @@
+#admin-console-view {
+
+  .border {
+    border: 1px solid red;
+  }
+  .user-name-pane {
+    height: 80vh;
+    background-color: white;
+    border-width: 0 2px;
+    border-style: solid;
+    border-color: #F0F0F0;
+    width: 25%;
+
+  }
+  .user-type-pane {
+    height: 80vh;
+    background-color: white;
+    border-width: 0 2px;
+    border-style: solid;
+    border-color: #F0F0F0;
+    width: 25%;
+
+  }
+  .admin-apps-pane {
+    height: 80vh;
+    background-color: white;
+    border-width: 0 2px;
+    border-style: solid;
+    border-color: #F0F0F0;
+    width: 25%;
+
+  }
+  .admin-email-pane {
+    height: 80vh;
+    background-color: white;
+    border-width: 0 2px;
+    border-style: solid;
+    border-color: #F0F0F0;
+    width: 25%;
+
+  }
+  .title {
+    background-color: #F0F0F0;
+    padding: 8px 5px;
+    font-weight: 500;
+    min-height: 36px;
+  }
+
+  // APP LIST STYLES
+  .no-pad {
+    padding: 0;
+  }
+  .content {
+    height: 36.6vh;
+    overflow: hidden;
+    width: 100%;
+  }
+  // .my-apps-pane .content{
+  //   height: 76vh;
+  // }
+  .apps-fixed {
+    max-height: 76vh;
+    overflow: hidden;
+  }
+  .ma-list {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    font-size: 1.2em;
+    width: 117%;
+    height: 34.6vh;
+    overflow: auto;
+    li {
+      padding: 10px 40px;
+      min-height: 44px;
+    }
+    li.user {
+      padding: 10px 15px;
+    }
+    /**/
+    a:hover, a:link, a:hover, a:visited {
+      background-color: transparent;
+      text-decoration: none;
+      color: black;
+    }
+    li:hover, .active {
+      background-color: rgba($ma-orange, .3);
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .apps-fixed .ma-list {
+    height: 76vh;
+  }
+  .new-sessions-pane, .new-stats-pane {
+    li:hover {
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+  // CONFIGURE USERS
+  .align-left {
+    float: left;
+  }
+  .align-right {
+    float: right;
+    position: relative;
+    right: 7vw;
+    text-align: left;
+  }
+  .add-user-btn {
+    position: absolute;
+    bottom: 18px;
+    left: 10px;
+    border-radius: 100%;
+    border-color: #F26226;
+    font-size: 15px;
+    font-weight: 200;
+    padding: 2px 8px;
+  }
+  .remove-user-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 14px;
+    padding: 5px 45px;
+    border-color: $ma-orange;
+  }
+  .view-compose {
+    display: inline-block;
+    float: right;
+    .view {
+      color: $ma-orange;
+    }
+  }
+}
+

@@ -1,0 +1,27 @@
+<ul class="admin_user_list ma-list">
+  <% @users.each do |user| %>
+      <a href="<%= "/user/#{user.id}" %>" class="<%= "user_#{user.id}" %>" data-remote="true">
+        <li class="user">
+          <%= user.fname %>
+          <%= user.lname %>
+        </li>
+      </a>
+  <% end %>
+</ul>
+<script>
+  ready = function () {
+    $('.admin_user_list li').on('click', function () {
+      $('.admin_user_list li').removeClass('active');
+      $(this).toggleClass('active');
+    });
+    $('.user-name-pane').on('click', function (){
+      $('.admin_user_list li').removeClass('active');
+      $('.user-type-pane .content').html('');
+      $('.admin-apps-pane .content').html('');
+      $('.admin-email-pane .content').html('');
+      $('.delete a').removeClass('black');
+    });
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>

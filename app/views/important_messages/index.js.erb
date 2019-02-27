@@ -1,0 +1,7 @@
+results = $('.app-info-pane-view .content');
+if(results.css('display') === 'block') {
+  results.toggle();
+}
+results.html('<%= j render 'partials/view_important_messages' %>').show();
+$('.app-info-pane-view .title').html('<%= j render 'partials/important_messages_view_compose' %>').show();
+

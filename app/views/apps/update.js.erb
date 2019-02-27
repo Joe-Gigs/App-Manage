@@ -1,0 +1,10 @@
+results = $('.app-info-pane-view .content');
+if (results.css('display') === 'block') {
+  results.toggle();
+}
+$('.dropdown-holder').after("<%= j render 'partials/flash_messages' %>");
+setTimeout(function () {
+  $('.success, .alert').slideUp();
+}, 3000);
+<% flash[:notice] = nil; flash[:alert] = nil %>
+results.html('<%= j render 'partials/push_config' %>').show();

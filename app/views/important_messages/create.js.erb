@@ -1,0 +1,9 @@
+$('.app-info-pane-view .content').html('<%= j render 'partials/view_important_messages' %>');
+$('.important_message_counter').html("<%= j render 'partials/important_message_count' %>");
+$('.dropdown-holder').after("<%= j render 'partials/flash_messages' %>");
+$('.view a').addClass('black');
+$('.compose a').removeClass('black');
+setTimeout(function () {
+  $('.success, .alert').slideUp();
+}, 3000);
+<% flash[:notice] = nil; flash[:alert] = nil %>

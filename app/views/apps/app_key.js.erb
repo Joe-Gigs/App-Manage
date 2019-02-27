@@ -1,0 +1,9 @@
+results = $('.app-info-pane-view .content');
+results.html('<%= j render 'partials/view_app_key' %>');
+$('.app-info-pane-view .title').text('INFORMATION');
+$('.dropdown-holder').after("<%= j render 'partials/flash_messages' %>");
+setTimeout(function () {
+  $('.success, .alert').slideUp();
+}, 3000);
+<% flash[:notice] = nil; flash[:alert] = nil %>
+

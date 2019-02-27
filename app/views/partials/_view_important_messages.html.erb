@@ -1,0 +1,54 @@
+<div class="view_important_message_wrap">
+  <% if @app.important_messages.blank? %>
+      <div class="no-message">
+        NO MESSAGES
+      </div>
+  <% else %>
+      <ol class="messages_list ma-list">
+        <% @app.important_messages.reverse_each do |i| %>
+            <%= link_to(app_important_message_path(@app, i.id), remote: true) do %>
+                <li class="col-md-12 col-lg-12">
+                  <div class="message-holder">
+                    <div class="center-box">
+                      <% if i.is_read? === false %>
+                          <div class="important_message_time">
+                            <%= i.created_at.strftime('%I:%M %p') %>
+                            <span class="caret-right"><%= image_tag('ic-right-carot.png') %></span>
+                          </div>
+                          <div class="message_subject">
+                            <span class="bubble_holder">
+                              <span class="message_bubble_style"></span>
+                            </span>
+                            <%= i.subject %>
+                          </div>
+                      <% else %>
+                          <div class="important_message_time read">
+                            <%= i.created_at.strftime('%I:%M %p') %>
+                            <span class="caret-right read"><%= image_tag('ic-right-carot-read.png') %></span>
+                          </div>
+                          <div class="message_subject read">
+                            <%= i.subject %>
+                          </div>
+                      <% end %>
+                      <div class="message_body">
+                        <% body = strip_tags(i.body.first(65)) %>
+                        <% if  body.length < 25 %>
+                          <%= 'Click to view' + '...'  %>
+                        <% else %>
+                            <%= body + '...'  %>
+                        <% end %>
+                        <% puts strip_tags(i.body.first(65)).length%>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+            <% end %>
+        <% end %>
+      </ol>
+  <% end %>
+  <br>
+  <script>
+    $(document).ready(function () {
+    });
+  </script>
+</div>

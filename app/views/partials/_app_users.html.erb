@@ -1,0 +1,24 @@
+<h2 id="stats-results">App Users</h2>
+<h4>User Count: <%= @users.count %></h4>
+<div class="panel panel-default col-md-8">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user['id'], root_path, remote: true %></td>
+          <td><%= user['fname']%></td>
+          <td><%= user['lname']%></td>
+          <td><%= user['email']%></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

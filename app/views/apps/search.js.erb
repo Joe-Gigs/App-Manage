@@ -1,0 +1,4 @@
+if($('div.new-app').css('display') === 'block'){
+    $('.new-app').html('<%= j render partial: 'partials/search' %>').stop().toggle('slide');
+}
+$('div.search-app').html('<%= j render partial: 'partials/search' %>').stop().toggle('slide');

@@ -1,0 +1,7 @@
+$('.admin-email-pane .content').html('<%= j render 'partials/admin_email_list' %>');
+$('.admin-apps-pane .content').html('<%= j render 'partials/admin_user_apps_list' %>');
+$('.user-type-pane .content').html('<%= j render 'partials/admin_user_type' %>');
+$('.add_delete').html('<%= j render 'partials/admin_add_delete_user' %>');
+$('.user_<%="#{@user.id}"%> li').addClass('active');
+$('.add a').removeClass('black');
+$('.delete a').addClass('black');

@@ -1,0 +1,27 @@
+<div class="wrapper_view_push_notifications">
+  <% if @app.messages.blank? %>
+      <div class="no-message">
+        COMING SOON
+      </div>
+  <% else %>
+      <ul class="pushes_list ma-list">
+        <% @app.messages.each do |m| %>
+            <li>
+              <div class="holder">
+                <div class="center-box">
+                  <div class="push-title">
+                    <%= m.created_at.strftime('%m/%d/%y') %>
+                  </div>
+                  <div class="push-body">
+                    <%= m.body %>
+                  </div>
+                </div>
+              </div>
+            </li>
+        <% end %>
+  <% end %>
+  </ul>
+  <div class="fade-box"></div>
+</div>
+
+

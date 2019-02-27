@@ -1,0 +1,6 @@
+results = $('.app-info-pane-view .content');
+if(results.css('display') === 'block') {
+  results.toggle();
+}
+results.html('<%= j render 'partials/view_email_notification_index' %>').hide().stop().toggle('slide');
+<!-- $('.app-info-pane-view .title').text('CONFIGURE EMAIL'); -->

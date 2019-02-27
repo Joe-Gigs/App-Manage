@@ -1,0 +1,6 @@
+results = $('.new-stats-pane');
+if(results.css('display') === 'block') {
+  results.toggle();
+}
+results.html('<%= j render 'partials/this_month' %>').hide().stop().toggle('slide');
+

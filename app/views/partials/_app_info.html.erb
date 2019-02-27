@@ -1,0 +1,52 @@
+<ul class="app-info ma-list">
+  <%= link_to(app_important_message_index_path(@app), remote: true) do %>
+      <li>
+        Important Messages
+      <span class="important_message_counter">
+        <%= render 'partials/important_message_count' %>
+      </span>
+      </li>
+  <% end %>
+  <%= link_to(app_message_index_path(@app), remote: true) do %>
+      <li>
+        Push Notifications
+      </li>
+  <% end %>
+  <%= link_to(app_key_path(@app), remote: true) do %>
+      <li>
+        Information
+      </li>
+  <% end %>
+  <%= link_to(app_email_frequency_path(@app), remote: true) do %>
+      <li>
+        Configure Email
+      </li>
+  <% end %>
+  <%= link_to(app_config_push_notifications_path(@app), remote: true) do %>
+      <li>
+        Configure Push Notifications
+      </li>
+  <% end %>
+  <%= link_to(app_config_users_path(@app), remote: true) do %>
+      <li>
+        Configure Users
+      </li>
+  <% end %>
+  <% if current_user && current_user.agent? || current_super_admin %>
+      <%= link_to(app_delete_path(@app), remote: true) do %>
+          <li>
+            Delete Your App
+          </li>
+      <% end %>
+  <% end %>
+</ul>
+<script>
+  ready = function () {
+    $('.app-info li').on('click', function () {
+      $('.app-info li').removeClass('active');
+      $(this).toggleClass('active');
+    });
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>

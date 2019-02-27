@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ManagedApps Portal</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav id="navbar" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="managed_apps_logo" href="<%= apps_console_path %>" class="navbar-brand"><%= image_tag('managed_apps_logo_copy.png') %></a>
+    </div>
+    <% if current_user || current_super_admin %>
+        <div class="dropdown-holder">
+          <div class="dropdown navbar-right" id="nav-drop">
+            <div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="dropdown-list">
+              Hello <%= super_admin_signed_in? ? current_super_admin.fname : current_user.upcase_name %>
+            </span>
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <% if current_user %>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <% elsif current_super_admin %>
+                  <li><%= link_to "Sign out", destroy_super_admin_session_path, :method => :delete %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <% if notice %>
+            <div class="notice success alert-success"><%= notice %></div>
+        <% elsif alert %>
+            <div class="alert alert-danger"><%= alert %></div>
+        <% end %>
+    <% end %>
+    <% if super_admin_signed_in? %>
+        <div class="managed-users-btn-box">
+          <div class="hold">
+            <%= link_to 'Apps', apps_console_path, class: 'btn btn-default manage-users-btn' %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</nav>
+<div class="container-fluid">
+  <%= yield %>
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    setTimeout(function () {
+      $('.success, .alert').slideUp();
+    }, 3000);
+  })
+</script>
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/56967fb01df5fe345b0c1156/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+</body>
+</html>

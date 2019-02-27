@@ -1,0 +1,11 @@
+<div class="hidden-form">
+  <%= form_tag(invitation_invite_path, method: :post, remote: true) do %>
+      <div class="new-user">
+        <%= text_field_tag 'fname', nil, placeholder: 'First Name', class: 'form-control' %>
+        <%= text_field_tag 'lname', nil, placeholder: 'Last Name', class: 'form-control' %>
+        <%= text_field_tag 'email', nil, placeholder: 'example@gmail.com', class: 'form-control' %>
+        <%= check_box_tag 'agent' %> Agent?
+      </div>
+      <%= submit_tag '+', class: 'btn btn-default add-user-btn add-submit', remote: true %>
+  <% end %>
+</div>

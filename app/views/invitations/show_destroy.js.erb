@@ -1,0 +1,13 @@
+if($('<%= ".user_#{@user.id}" %>').hasClass('active')){
+  $('.remove-user-btn').remove();
+  $('.config-users-list li').removeClass('active');
+  $('#confirm-delete').remove();
+}else{
+  $('.config-users-list li').removeClass('active');
+  $('<%= ".user_#{@user.id}" %>').addClass('active');
+  $('.config-users').append("<button class='btn btn-default btn-xs remove-user-btn' data-toggle='modal' data-target='#confirm-delete'>Remove</button>");
+  $('#confirm-delete').remove();
+  $('.config-users').append("<%= j render partial: 'partials/confirm_remove_modal'%>");
+}
+
+

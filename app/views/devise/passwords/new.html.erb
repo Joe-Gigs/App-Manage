@@ -1,0 +1,17 @@
+<div class="col-md-12 col-md-sm-12 col-lg-12">
+  <div class="col-md-push-4 col-md-4 col-lg-4 col-lg-push-4 col-sm-4 col-sm-push-4 col-xs-12">
+    <div id='forgot-password-form' class="wrapper_login">
+      <h2>FORGOT YOUR PASSWORD?</h2>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="field form-group">
+            <%= f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control' %>
+          </div>
+          <div class="actions form-group">
+            <%= f.submit "Send me reset password instructions", class: 'form-control btn btn-default log-in-btn' %>
+          </div>
+      <% end %>
+      <%= link_to "Cancel", new_session_path(resource_name), class: 'form-control btn btn-default sign-up-btn' %>
+    </div>
+  </div>
+</div>

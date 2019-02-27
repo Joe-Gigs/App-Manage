@@ -1,0 +1,41 @@
+<ul class="config_email_list ma-list">
+  <div class="stat-updates">Receive Stat Updates</div>
+  <%= form_for :app, :url => app_email_frequency_update_path, :action => 'email_frequency_update', remote: true do |i| %>
+      <div class="radio_wrapper">
+        <ul>
+          <li class="daily">
+            <%= i.radio_button :email_frequency, 'daily', class: 'radio', id: 'daily1' %>
+            <label for="daily1">DAILY</label>
+          </li>
+          <li class="weekly">
+            <%= i.radio_button :email_frequency, 'weekly', class: 'radio', id: 'weekly1' %>
+            <label for="weekly1">WEEKLY</label>
+          </li>
+          <li class="monthly">
+            <%= i.radio_button :email_frequency, 'monthly', class: 'radio', id: 'monthly1' %>
+            <label for="monthly1">MONTHLY</label>
+          </li>
+          <li class="no_notifications">
+            <%= i.radio_button :email_frequency, 'no_notifications', class: 'radio', id: 'no_notifications1' %>
+            <label for="no_notifcations1">DO NOT RECEIVE EMAIL UPDATES</label>
+          </li>
+        </ul>
+      </div>
+      <%= i.submit 'Save', class: 'btn update-btn btn-sm btn-default' %>
+  <% end %>
+</ul>
+<script>
+  ready = function () {
+    <% if @app.email_frequency %>
+    $('.<%= @app.email_frequency %>').addClass('active');
+    <% end %>
+    $('.config_email_list li').on('click', function () {
+      $('.config_email_list li').removeClass('active');
+      $(this).toggleClass('active');
+      var class_name = $(this).attr('class').split(' ')[0];
+      $('#' + class_name + '1').prop('checked', true);
+    });
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>

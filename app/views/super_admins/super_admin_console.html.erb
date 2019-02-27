@@ -1,0 +1,63 @@
+<div class="btn-holder">
+  <div class="dropdown" id="nav-drop">
+    <div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    </div>
+    <ul class="dropdown-menu" id='new-app-dropdown' aria-labelledby="newAppDropdown"></ul>
+  </div>
+</div>
+<div class="row render-console">
+  <div class="col-md-12 col-lg-12 border" id="admin-console-view">
+    <div class="user-name-pane col-md-3 col-lg-3">
+      <div class="row">
+        <div class="title col-md-12 col-lg-12">
+          <div class="add_delete">
+            <div class="view-compose">
+              <span class="add"><%= link_to 'Add', new_user_path, remote: true %></span>
+              <span class="divider"> | </span>
+              <span class="delete"> <%= link_to 'Delete', remote: true %></span>
+            </div>
+          </div>
+          USERNAME
+        </div>
+        <div class="content">
+          <%= render 'partials/admin_user_list', remote: true %>
+        </div>
+      </div>
+    </div>
+    <div class="user-type-pane col-md-4 col-lg-4">
+      <div class="row">
+        <div class="title col-md-12 col-lg-12">
+          USER TYPE
+        </div>
+        <div class="content">
+
+        </div>
+      </div>
+    </div>
+    <div class="admin-apps-pane col-md-4 col-lg-4">
+      <div class="row">
+        <div class="title col-md-12 col-lg-12">
+          APPS
+        </div>
+        <div class="content">
+
+        </div>
+      </div>
+    </div>
+    <div class="admin-email-pane col-md-4 col-lg-4">
+      <div class="row">
+        <div class="title col-md-12 col-lg-12">
+          CONTACT EMAIL
+        </div>
+        <div class="content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+  <% if params[:app] %>
+  $(".app_<%= params[:app] %>").click();
+  <% end %>
+</script>

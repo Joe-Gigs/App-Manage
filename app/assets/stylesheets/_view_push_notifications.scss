@@ -1,0 +1,45 @@
+.wrapper_view_push_notifications {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  font-size: 1.2em;
+  width: 107%;
+  height: 34.6vh;
+  //overflow: auto;
+  .no-message {
+    color: $ma-orange !important;
+  }
+  li {
+    padding: 10px 20px !important;
+  }
+  li.user {
+    padding: 10px 15px;
+  }
+  a:hover, a:link, a:hover, a:visited {
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+  }
+  li:hover, .active {
+    //background-color: rgba($ma-orange, .3);
+    text-decoration: none;
+    color: black;
+  }
+  .pushes_list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .push-title {
+    font-size: .9em;
+    font-weight: 600;
+  }
+  .push-body {
+    font-weight: 300;
+    font-size: 0.8em;
+    margin-top: 5px;
+    word-wrap: break-word;
+    overflow-x: auto;
+    margin-right: 15px;
+    width: 83%;
+  }
+}

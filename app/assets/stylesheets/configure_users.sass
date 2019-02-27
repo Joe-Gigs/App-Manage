@@ -1,0 +1,81 @@
+.config-users
+  height: 34.6vh
+  overflow: hidden
+  width: 100%
+  li
+    padding: 10px 10px !important
+  .hidden
+    display: none
+  .config-users-list
+    padding-bottom: 30px !important
+  .add-submit
+    background-color: $ma-orange
+    color: white
+  .hidden-form
+    height: 44px
+    width: 29vw
+    padding: 0 10px
+    .new-user
+      border: 1px solid #F1F1F1
+      height: 28px
+      border-radius: 5px
+      background-color: #F0F0F0
+      .first-name
+        width: 12.5vw
+        padding: 0 28px
+      .last-name.align-right
+        width: 14.5vw
+        right: 0 !important
+        padding: 0 49px
+      input
+        border: none
+        background-color: #F0F0F0
+      input:focus
+        outline-color: #F0F0F0
+
+.vertical-alignment-helper
+  display: table
+  height: 100%
+  width: 100%
+
+.vertical-align-center
+  /* To center vertically */
+  display: table-cell
+  vertical-align: middle
+
+.modal-content
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width: inherit
+  padding: 15px
+  height: inherit
+  text-align: center
+  /* To center horizontally */
+  margin: 0 auto
+
+.modal-content-config-user
+  padding: 10px 30px 30px 30px
+  width: inherit
+  height: inherit
+  background-color: white
+  text-align: center
+  margin: 0 auto
+  border-radius: 5px
+
+.modal-body
+  font-size: 1.8em
+  .btns
+    margin-top: 30px
+    .cancel-btn, .confirm-btn
+      padding: 12px 36px
+      margin: 0 15px
+      color: white
+    .cancel-btn
+      background-color: $ma-grey
+    .confirm-bottom
+      background-color: $ma-orange
+
+.modal-body-invite-form
+  height: 100%
+  width: 50%
+  padding: 90px 10px
+

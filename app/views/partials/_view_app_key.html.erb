@@ -1,0 +1,48 @@
+<div class="col-md-12 col-lg-12 key_wrapper">
+  <div class="app_key set-key-height">
+    <div id="app-key-toggle">VIEW APP KEY
+      <span class="caret-up-down-app down"><%= image_tag('ic-carot-up.png') %> </span>
+    </div>
+    <%= text_field_tag :message, nil, value: @app.app_key, class: 'form-control', id: 'view-app-key', readonly: true %>
+    <button class="view-app-key btn btn-warning form-control" data-clipboard-target="#view-app-key">COPY APP KEY
+    </button>
+  </div>
+  <div class="api_key set-key-height">
+    <div id="api-key-toggle">VIEW API KEY
+      <span class="caret-up-down-api down"><%= image_tag('ic-carot-up.png') %> </span>
+    </div>
+    <%= text_field_tag :message, nil, value: @app.api_key, class: 'form-control', id: 'view-api-key', readonly: true %>
+    <button class="view-api-key btn btn-warning form-control" data-clipboard-target="#view-api-key">COPY API KEY
+    </button>
+  </div>
+</div>
+<script>
+  ready = function () {
+    $('#app-key-toggle').on('click', function () {
+      if ($(this).hasClass('down')) {
+        $('.caret-up-down-app').html("<%= j image_tag('ic-carot-up.png')%>");
+        $('#view-app-key, .view-app-key').toggle();
+        $(this).removeClass('down');
+      } else {
+        $('.caret-up-down-app').html("<%= j image_tag('ic-carot.png')%>");
+        $('#view-app-key, .view-app-key').toggle();
+        $(this).addClass('down');
+      }
+    });
+    $('#api-key-toggle').on('click', function () {
+      if ($(this).hasClass('down')) {
+        $('.caret-up-down-api').html("<%= j image_tag('ic-carot-up.png')%>");
+        $('#view-api-key, .view-api-key').toggle();
+        $(this).removeClass('down');
+      } else {
+        $('.caret-up-down-api').html("<%= j image_tag('ic-carot.png')%>");
+        $('#view-api-key, .view-api-key').toggle();
+        $(this).addClass('down');
+      }
+    });
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+  var clipboard = new Clipboard('.view-app-key');
+  var clipboard2 = new Clipboard('.view-api-key');
+</script>

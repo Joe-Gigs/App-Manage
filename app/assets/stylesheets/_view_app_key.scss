@@ -1,0 +1,22 @@
+
+#view-app-key, #view-api-key {
+  display: none;
+  margin: 5px 0;
+}
+.view-app-key, .view-api-key {
+  display: none;
+}
+#app-key-toggle, #api-key-toggle{
+  color: $ma-orange;
+  float: left;
+  width: 100%;
+}
+.caret-up-down-api, .caret-up-down-app {
+  float: right;
+}
+.key_wrapper {
+  padding: 10px 20px;
+}
+.set-key-height{
+  height: 17vh;
+}

@@ -1,0 +1,29 @@
+.admin_user_type_style {
+  input.radio {
+    float: right;
+    clear: none;
+    margin-right: 90px;
+    visibility: hidden;
+    padding: 0;
+  }
+  li:hover, .active {
+    background-color: rgba($ma-orange, .3);
+    text-decoration: none;
+    color: black;
+  }
+  li, li label{
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 16px;
+    width: 100%;
+  }
+  ul.dropdown-menu {
+    width: 100%;
+  }
+  .dropdown-toggle {
+    float: right;
+  }
+  .dropdown-holder {
+    font-size: 16px;
+  }
+}

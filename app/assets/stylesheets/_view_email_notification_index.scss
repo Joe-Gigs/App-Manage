@@ -1,0 +1,41 @@
+.config_email_list {
+  padding: 10px 10px 49px 7px;
+  list-style: none;
+  text-align: left;
+  font-size: 1.2em;
+  width: 100%;
+  form{
+    margin-bottom: 35px;
+  }
+  .update-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 14px;
+    padding: 5px 45px;
+    border-color: #f26226;;
+  }
+  input.radio {
+    float: right;
+    clear: none;
+    margin-right: 90px;
+    visibility: hidden;
+    padding: 0;
+    display: none;
+  }
+  span {
+    cursor: pointer;
+  }
+  li:hover, .active {
+    background-color: rgba($ma-orange, .3);
+    text-decoration: none;
+    color: black;
+  }
+  li, li label{
+    cursor: pointer;
+    font-weight: 300;
+  }
+  .stat-updates{
+    padding: 10px 25px;
+    font-weight: 600;
+  }
+}

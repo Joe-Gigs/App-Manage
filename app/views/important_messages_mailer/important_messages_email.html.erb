@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <%= stylesheet_link_tag 'emails' %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://portal.managedapps.co/">
+          <img src="https://s3-us-west-2.amazonaws.com/managedapps.co/images/logo-big.png" alt="ma-logo">
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 date">
+    <span class="todays-date"><%= todays_date %></span>
+  </div>
+  <div class="email-content container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 left-text">
+        <div class="subject">
+          <span class="subject-text">
+            You have received an Important Message!
+          </span>
+        </div>
+        <div class="row">
+          <div class="summary col-sm-12 col-md-12 col-lg-12">
+            Hello <%=" #{fname if fname}"%>, <br/>
+            You have received an important message for <span class="underscore"><%= app_name.upcase %></span>.
+          </div>
+          <div class="summary-link col-sm-12 col-md-12 col-lg-12">
+            Click the following link to learn more about your app:
+            <span class="link"><a href="<%= link_for_messages %>"><%= link_for_messages %></a></span>
+          </div>
+          <div class="good-bye col-md-12 col-sm-12 col-lg-12">
+            We thank you for your loyalty and have a pleasent day.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

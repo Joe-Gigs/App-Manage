@@ -1,0 +1,22 @@
+<div id="new_user_stats_pane">
+  <ul class="new-user-stats- ma-list">
+    <li class="app_session_total">Total: <span class="stat_total"><%= @app.app_session_total %></span></li>
+    <div class="app_session_pop_up_show">Total new and existing user activity. Note, this is activity since you joined
+      Managed Apps
+    </div>
+    <li>Today: <span class="stat_style"><%= @app.app_sessions_today.count %></span></li>
+    <li>Yesterday:<span class="stat_style"><%= @app.app_sessions_yesterday.count %></span></li>
+    <li>This Week:<span class="stat_style"><%= @app.app_sessions_this_week.count %></span></li>
+    <li>Last Week:<span class="stat_style"><%= @app.app_sessions_last_week.count %></span></li>
+    <li>This Month:<span class="stat_style"><%= @app.app_sessions_this_month.count %></span></li>
+    <li>Last Month:<span class="stat_style"><%= @app.app_sessions_last_month.count %></span></li>
+  </ul>
+</div>
+<script>
+  $('.app_session_total').hover(function () {
+    $('.app_session_pop_up_show').show()
+  }, function () {
+    $('.app_session_pop_up_show').hide()
+  });
+</script>
+

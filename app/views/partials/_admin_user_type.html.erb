@@ -1,0 +1,60 @@
+<div class="col-md-12 col-lg-12 key_wrapper">
+  <div class="admin_user_type_style">
+    <div class="dropdown-holder">
+      <% if @user.agent %>
+          AGENT
+      <% else %>
+          USER
+      <% end %>
+      <div class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <div class="user_type_toggle">
+          <span class="caret-up-down-user down"><%= image_tag('ic-carot-up.png') %> </span>
+        </div>
+      </div>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <%= form_for :user, :url => user_update_status_path, :action => 'update_user_status', remote: true do |f| %>
+            <% if @user.agent %>
+                <%= f.radio_button :agent, '0', class: 'radio', id: 'agent_false' %>
+                <li><label for="agent_false">USER</label></li>
+            <% else %>
+                <%= f.radio_button :agent, '1', class: 'radio', id: 'agent_true' %>
+                <li><label for="agent_true">AGENT</label></li>
+            <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  $('input:radio').click(function () {
+    $(this).closest('form').submit();
+  });
+  ready = function () {
+    $('.user-type-toggle').on('click', function () {
+      if ($(this).hasClass('down')) {
+        $('.caret-up-down-user').html("<%= j image_tag('ic-carot-up.png')%>");
+        $('.dropdown-toggle').toggle();
+        $(this).removeClass('down');
+      } else {
+        $('.caret-up-down-user').html("<%= j image_tag('ic-carot.png')%>");
+        $('.dropdown-toggle').toggle();
+        $(this).addClass('down');
+      }
+    });
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

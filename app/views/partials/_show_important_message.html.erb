@@ -1,0 +1,28 @@
+<div class="show_important_message">
+  <div class="subject">
+    <%= @important_message.subject %>
+  </div>
+  <hr>
+  <div class="body">
+    <%= @important_message.body.html_safe %>
+  </div>
+  <div class="fade-box"></div>
+  <%= link_to 'Back', app_important_message_index_path, remote: true, class: 'back-btn btn btn-sm btn-default' %>
+  <button class='delete-btn btn btn-sm btn-default' data-toggle='modal' data-target='#confirm-delete-message'>DELETE</button>
+</div>
+
+<div class="modal fade" id="confirm-delete-message" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteMessageModal" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center">
+      <div class="modal-content">
+        <div class="modal-body">
+          Are you sure you want to delete<br/>this message?
+          <div class="btns">
+              <div class="btn btn-lg btn-default cancel-btn" data-dismiss="modal">Cancel</div>
+              <%= link_to 'Delete', app_important_message_path, method: :delete, class:'btn btn-danger confirm-btn btn-lg', remote: true%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

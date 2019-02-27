@@ -1,0 +1,8 @@
+IMPORTANT MESSAGES
+<% if current_user && current_user.agent? || current_super_admin %>
+    <div class="view-compose">
+      <span class="view"><%= link_to 'View', app_important_message_index_path, remote: true, class: 'black' %></span>
+      <span class="divider"> | </span>
+      <span class="compose"> <%= link_to 'Compose', new_important_message_path, remote: true %></span>
+    </div>
+<% end %>

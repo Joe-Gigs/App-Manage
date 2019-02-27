@@ -1,0 +1,10 @@
+$('.app-info-pane-view .content').html('');
+$('.app-info-pane .content').html('<%= j render 'partials/app_info' %>');
+$('.app_name').html('<%= j render 'partials/app_name' %>');
+$('.new-stats-pane .content').html('<%= j render 'partials/new_user_stats'%>');
+$('.new-sessions-pane .content').html('<%= j render 'partials/app_sessions'%>');
+$('.app-list li').removeClass('active');
+$('.app_<%="#{@app.id}"%> li').addClass('active');
+$('.hidden-titles').show();
+$('.app-info-pane-view .title').text('');
+

@@ -1,0 +1,27 @@
+<div class="col-md-12 col-lg-12 wrapper_new_push_notifications">
+  <%= form_for :message, url: app_message_index_path, method: :post, remote: true do |message| %>
+      <%= message.label 'MESSAGE', 'MESSAGE', class: 'push-title' %>
+      <div class="form_wrap">
+        <%= message.text_area :body, autocomplete: 'off', placeholder: 'Please keep message under 255 characters', class: 'resize_message_box', :maxlength => 255 %>
+        <br><br>
+        <span class="char_count">255</span>
+        <%= message.submit 'Send Push', class: 'btn push-send-btn btn-sm btn-default', id: 'send-push' %>
+      </div>
+  <% end %>
+</div>
+<script>
+  ready = function () {
+    var message_body = $('#message_body');
+    $('#send-push').attr('disabled', '');
+    message_body.on('keyup', function () {
+      $('.char_count').html(255 - $('#message_body').val().length);
+      if (message_body.val().length <= 1) {
+        $('#send-push').attr('disabled', '')
+      } else {
+        $('#send-push').removeAttr('disabled')
+      }
+    })
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>

@@ -1,0 +1,9 @@
+$('.my-apps-pane .content').html("<%= j render 'partials/user_apps' %>");
+$('.app_count').html("<%= j render 'partials/app_count' %>");
+$('.dropdown-holder').after("<%= j render 'partials/flash_messages' %>");
+setTimeout(function () {
+  $('.success, .alert').slideUp();
+}, 3000);
+<% flash[:notice] = nil; flash[:alert] = nil %>
+$('#app_app_name').val('');
+$('#new-app-dropdown').click();

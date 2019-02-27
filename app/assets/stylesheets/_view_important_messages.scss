@@ -1,0 +1,160 @@
+.view_important_message_wrap {
+  list-style: none;
+  text-align: left;
+  font-size: 1.2em;
+  li {
+    height: 90px !important;
+    padding: 0px 55px 0 25px !important;
+  }
+  li.user {
+    padding: 10px 15px;
+  }
+  a:hover, a:link, a:hover, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  .make_bold {
+    font-weight: 800;
+    font-size: 18px;
+  }
+  .important_message_time {
+    float: right;
+    margin-right: 70px;
+    font-size: 15px;
+    @media screen and (max-width: 1024px){
+      margin-right: 10px;
+    }
+  }
+  .messages_list {
+    padding: 5px 20px 10px 5px;
+    list-style: none;
+    font-size: 14px;
+  }
+  img {
+    width: 6px;
+  }
+  .caret-right {
+    margin-left: 10px;
+  }
+  .message_subject {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .read{
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .message_body {
+    font-weight: 300;
+    font-size: 0.8em;
+    margin-top: 5px;
+    word-wrap: break-word;
+    overflow-x: auto;
+    margin-right: 15px;
+    width: 85%;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .message-holder{
+    display: table;
+    width: 100%;
+    height: 90px;
+  }
+  .center-box{
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.radio_wrapper ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.counter_style {
+  background-color: #FF0000;
+  border-radius: 50%;
+  color: white;
+  padding: 2px 7px;
+  font-size: 0.8em;
+}
+
+.bubble_holder {
+  position: absolute;
+  left: 8px;
+}
+
+.message_bubble_style {
+  background-color: #FF0000;
+  border-radius: 50%;
+  padding: 1px 11px 0 1px;
+  font-size: 8px;
+}
+
+.show_important_message {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px 10px 25px;
+  hr{
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .subject{
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .body{
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    height: 32.1vh;
+    overflow: auto !important;
+    width: 110% !important;
+    padding-right: 10% !important;
+    padding-bottom: 8.1vh;
+    color: rgba(0, 0, 0, 0.6) !important;
+  }
+  .body p, .body div{
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    width: initial !important;
+    line-height: inherit !important;
+    padding-right: 10% !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+
+  }
+  .body p, .body span{
+    width: 110% !important;
+  }
+  .back-btn{
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    padding: 5px 40px;
+    border-color: #f26226;
+  }
+  .delete-btn{
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    padding: 5px 40px;
+    border-color: #f26226;
+    color: black
+  }
+  .fade-box{
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    left: 0;
+    bottom: 0;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(bottom,rgba(255,255,255,0),rgba(0,0,0,1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top,rgba(255,255,255,0),rgba(0,0,0,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top,rgba(255,255,255,0),rgba(0,0,0,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to top, rgba(255,255,255,1), rgba(0,0,0,0));
+  }
+}

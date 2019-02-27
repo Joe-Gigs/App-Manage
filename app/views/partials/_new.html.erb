@@ -1,0 +1,11 @@
+<div class="col-md-12 col-lg-12 new-app-div">
+  <%= form_for @app, url: new_app_path, remote: true do |app| %>
+      <div class="center-button">
+        <%= app.text_field :app_name, placeholder: 'Application name', autocomplete: 'off', class: 'form-group name-input form-control' %>
+        <%= app.submit 'Create', class: 'btn form-control btn-sm btn-warning na-btn' %>
+      </div>
+  <% end %>
+</div>
+
+
+

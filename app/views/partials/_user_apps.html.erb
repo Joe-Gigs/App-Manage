@@ -1,0 +1,19 @@
+<div class="apps-fixed">
+  <ul class="app-list ma-list">
+    <% @apps.each do |app| %>
+        <a href="<%= "/app/#{app.id}" %>" class="<%= "app_#{app.id}" %>" data-remote="true">
+          <li class="app">
+            <%= app.app_name %>
+          </li>
+        </a>
+    <% end %>
+  </ul>
+</div>
+<script>
+  $('.app-list').on('click', function () {
+    $('.app-list li').removeClass('active');
+    $('.app-info-pane .content').html('');
+    $('.new-stats-pane .content').html('');
+    $('.new-sessions-pane .content').html('');
+  });
+</script>

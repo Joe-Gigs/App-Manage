@@ -1,0 +1,6 @@
+$('#initial-add-btn').hide();
+$('.config-users-list').append('<%= j render partial: 'partials/invite_user_to_app' %>')
+$('.config-users-list').animate({
+  scrollTop: $("#scroll-to-form").offset().top - 10
+}, 1000);
+

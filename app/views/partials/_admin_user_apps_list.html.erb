@@ -1,0 +1,7 @@
+<ul class="admin_user_apps ma-list">
+  <% @user.apps.each do |app| %>
+      <!--<a href="<%= "/app/#{app.id}" %>" class="<%= "app_#{app.id}" %>" data-remote="true">-->
+        <li><%= app.app_name %></li>
+      <!--</a>-->
+  <% end %>
+</ul>

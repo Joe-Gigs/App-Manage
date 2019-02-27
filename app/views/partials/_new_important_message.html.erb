@@ -1,0 +1,26 @@
+<div class="col-md-12 col-lg-12 important_message_wrap">
+  <%= form_for :important_message, url: app_important_message_index_path, method: :post, remote: true do |message| %>
+      <%= message.label 'TITLE', 'TITLE', class: 'compose-title' %>
+      <div class="resize-title">
+        <%= message.text_field :subject, autocomplete: 'off', class: 'resize_title' %>
+      </div>
+      <br>
+      <%= message.label 'MESSAGE', 'MESSAGE', class: 'compose-title' %>
+      <%= message.text_area :body, autocomplete: 'off', class: 'tinymce resize_message_box_IM' %>
+      <%= message.submit 'Send', class: 'btn send-btn btn-sm btn-default' %>
+  <% end %>
+</div>
+<script type="text/javascript" charset="utf-8">
+  ready = function () {
+    tinymce.remove();
+    tinymce.init({
+      selector: 'textarea',
+      menubar: false,
+      statusbar: false,
+      toolbar: false,
+      height: '100%'
+    });
+  };
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script>
